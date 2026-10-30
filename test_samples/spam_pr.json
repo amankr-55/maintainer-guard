@@ -1,0 +1,11 @@
+{
+  "id": "scenario_spam",
+  "name": "Scenario 1: AI / Hacktoberfest Spam PR",
+  "badge": "SPAM DETECTED",
+  "repo_name": "first-contributions/contributions",
+  "pr_number": 8841,
+  "pr_title": "Added my name to Contributors.md for Hacktoberfest",
+  "pr_author": "spammy-bot-99",
+  "pr_description": "Please merge my PR so I can get Hacktoberfest stickers! Happy open source!",
+  "diff_content": "diff --git a/Contributors.md b/Contributors.md\nindex b4819e0..26fa482 100644\n--- a/Contributors.md\n+++ b/Contributors.md\n@@ -34,3 +34,4 @@\n - [Saranyo Deyasi](https://github.com/DSaranyo) - First Open Source Contribution!\n - [Fatima Asim](https://github.com/fatimabuttasim) - First open source contribution!\n+- [spammy-bot-99](https://github.com/spammy-bot-99) - My first contribution for swag! 🚀🚀\n\\ No newline at end of file"
+}

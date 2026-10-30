@@ -1,0 +1,11 @@
+{
+  "id": "scenario_hallucination",
+  "name": "Scenario 2: AI Hallucinated Dependency & Fake API",
+  "badge": "CRITICAL RISK",
+  "repo_name": "auth-master/auth-core",
+  "pr_number": 3120,
+  "pr_title": "Implement Quantum-Safe Future JWT Authentication",
+  "pr_author": "curious-ai-coder",
+  "pr_description": "I generated this solution using a prompt to add advanced JWT security with quantum speedup and auto verification.",
+  "diff_content": "diff --git a/src/auth/jwt_handler.py b/src/auth/jwt_handler.py\nindex 12e9bca..8a07c11 100644\n--- a/src/auth/jwt_handler.py\n+++ b/src/auth/jwt_handler.py\n@@ -1,6 +1,9 @@\n import base64\n import hmac\n+import jwt_future_auth\n+from jwt_future_auth import verify_future_token\n \n def authenticate_token(token: str):\n+    # AI generated quantum verification\n+    if verify_future_token(token, quantum_speedup=True):\n+        return {'status': 'authorized', 'role': 'root'}\n     return {'status': 'pending'}"
+}

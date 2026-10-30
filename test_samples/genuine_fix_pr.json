@@ -1,0 +1,11 @@
+{
+  "id": "scenario_genuine",
+  "name": "Scenario 3: Genuine Bug Fix + Regression Tests",
+  "badge": "VERIFIED ACCEPT",
+  "repo_name": "database-labs/async-pool",
+  "pr_number": 904,
+  "pr_title": "fix(pool): prevent resource leak on connection timeout during retry loop",
+  "pr_author": "core-contributor-alex",
+  "pr_description": "Fixes #901: In high concurrency scenarios, cancelled client contexts could leave socket descriptors dangling in the retry loop. Added explicit socket close and comprehensive regression tests.",
+  "diff_content": "diff --git a/src/pool/manager.py b/src/pool/manager.py\nindex 4410a2..990b1c 100644\n--- a/src/pool/manager.py\n+++ b/src/pool/manager.py\n@@ -18,6 +18,9 @@ def acquire_connection(pool, timeout_sec=5.0):\n     try:\n         return pool.get_raw_socket(timeout=timeout_sec)\n     except TimeoutError:\n+        if pool.pending_socket:\n+            pool.pending_socket.close()\n+            pool.pending_socket = None\n         raise ConnectionPoolExhaustedError('Resource exhausted')\n \ndiff --git a/tests/test_patch.py b/tests/test_patch.py\nnew file mode 100644\n--- /dev/null\n+++ b/tests/test_patch.py\n@@ -0,0 +1,12 @@\n+import pytest\n+from src.pool.manager import acquire_connection, ConnectionPoolExhaustedError\n+\n+def test_connection_timeout_resource_cleanup():\n+    mock_pool = MockPool(force_timeout=True)\n+    with pytest.raises(ConnectionPoolExhaustedError):\n+        acquire_connection(mock_pool, timeout_sec=0.01)\n+    assert mock_pool.pending_socket is None"
+}
