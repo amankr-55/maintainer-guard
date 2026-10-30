@@ -2,7 +2,7 @@ import re
 import ast
 import json
 import httpx
-from typing import List, Dict, Any, Tuple
+from typing import List, Dict, Any, Tuple, Optional
 from app.models import PRAnalysisRequest, PRAnalysisResponse, SpamSignal
 from app.sandbox_runner import execute_sandbox_dry_run
 from app.graph_builder import build_blast_radius_graph
