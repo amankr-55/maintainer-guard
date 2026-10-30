@@ -1,0 +1,18 @@
+{
+  "name": "maintainer-guard",
+  "version": "1.2.0",
+  "description": "Autonomous Open-Source PR Triage Agent for Hacktoberfest 2026",
+  "main": "run.py",
+  "scripts": {
+    "dev": "python run.py",
+    "start": "python run.py"
+  },
+  "keywords": [
+    "hacktoberfest",
+    "pr-triage",
+    "ai-agent",
+    "open-source"
+  ],
+  "author": "Aman Kumar",
+  "license": "MIT"
+}
