@@ -53,9 +53,21 @@
         <div>
           <div class="flex items-center gap-2">
             <h1 class="text-xl font-bold tracking-tight text-white">MaintainerGuard</h1>
-            <span class="text-xs px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-mono">v1.0.0</span>
+            <span class="text-xs px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-mono">v1.2.0 Silent Firewall</span>
           </div>
-          <p class="text-xs text-slate-400">Autonomous PR & Issue Triage Agent · Built for Hacktoberfest 2026</p>
+          <p class="text-xs text-slate-400">Autonomous PR Triage & Proof-of-Intent Firewall · Built for Hacktoberfest 2026</p>
+        </div>
+      </div>
+
+      <!-- Live ROI & Silent Mode Pill -->
+      <div class="hidden md:flex items-center gap-3">
+        <div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-950/40 border border-cyan-800/40 text-[11px] text-cyan-300 font-mono">
+          <i data-lucide="clock" class="w-3.5 h-3.5 text-cyan-400"></i>
+          <span id="roi-time-saved">~35 mins saved / PR</span>
+        </div>
+        <div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-950/40 border border-emerald-800/40 text-[11px] text-emerald-300 font-mono">
+          <i data-lucide="shield" class="w-3.5 h-3.5 text-emerald-400"></i>
+          <span id="roi-noise-elim">94% Noise Eliminated</span>
         </div>
       </div>
 
@@ -217,6 +229,19 @@
         <div id="sandbox-logs" class="bg-black/80 border border-dark-border rounded-xl p-3.5 font-mono text-xs text-emerald-400/90 h-36 overflow-y-auto space-y-1">
           <p class="text-slate-500">// Standby. Awaiting PR diff for container execution...</p>
         </div>
+      </div>
+
+      <!-- Proof-of-Intent Gate (Reverse Turing Challenge) -->
+      <div id="proof-of-intent-box" class="hidden bg-dark-card border border-amber-800/40 rounded-2xl p-5 shadow-xl">
+        <div class="flex items-center justify-between mb-2">
+          <div class="flex items-center gap-2">
+            <i data-lucide="help-circle" class="w-4 h-4 text-amber-400"></i>
+            <h3 class="font-semibold text-sm text-amber-200">Proof-of-Intent Gate (Author Challenge)</h3>
+          </div>
+          <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-amber-950/60 text-amber-300 border border-amber-800/50">Anti-AI Slop</span>
+        </div>
+        <p class="text-xs text-slate-400 mb-3">Automatically challenges unverified contributors to explain their algorithmic changes before maintainer attention is spent.</p>
+        <div id="proof-of-intent-text" class="bg-dark-bg border border-dark-border rounded-xl p-3 text-xs font-mono text-amber-300/90 whitespace-pre-wrap"></div>
       </div>
 
       <!-- Automated GitHub Action & Review Generator -->

@@ -200,7 +200,26 @@ function renderAnalysisResults(data) {
   document.getElementById('github-comment-preview').textContent = data.suggested_comment;
   document.getElementById('suggested-action-tag').textContent = data.suggested_github_action;
 
-  // 6. Draw Blast Radius on Canvas
+  // 6. Update Proof-of-Intent Gate & ROI
+  const proofBox = document.getElementById('proof-of-intent-box');
+  const proofText = document.getElementById('proof-of-intent-text');
+  if (data.proof_of_intent_challenge && !data.proof_of_intent_challenge.startsWith('N/A')) {
+    proofBox.classList.remove('hidden');
+    proofText.textContent = data.proof_of_intent_challenge;
+  } else {
+    proofBox.classList.add('hidden');
+  }
+
+  if (data.time_saved_minutes) {
+    const roiTime = document.getElementById('roi-time-saved');
+    if (roiTime) roiTime.textContent = `~${data.time_saved_minutes} mins saved / PR`;
+  }
+  if (data.noise_reduction_ratio) {
+    const roiNoise = document.getElementById('roi-noise-elim');
+    if (roiNoise) roiNoise.textContent = `${data.noise_reduction_ratio} Noise Eliminated`;
+  }
+
+  // 7. Draw Blast Radius on Canvas
   drawBlastRadiusGraph(data.blast_radius);
 }
 
